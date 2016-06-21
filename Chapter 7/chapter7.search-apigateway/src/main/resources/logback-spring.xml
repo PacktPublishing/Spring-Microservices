@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="spring.application.name" value="search-apigateway"/>
+	<property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [${spring.application.name}] [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+      	<destination>localhost:4560</destination>
+      	<!-- encoder is required -->
+      	<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+  	</appender>
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="stash" />
+	</root>
+</configuration>

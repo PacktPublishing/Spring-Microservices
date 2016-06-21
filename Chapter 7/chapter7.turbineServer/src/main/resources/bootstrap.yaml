@@ -1,0 +1,14 @@
+
+spring:
+   application:
+     name : turbineserver
+turbine:
+   clusterNameExpression: new String('default')
+   appConfig : search-apigateway,search-service
+server:
+  port: 9090
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://localhost:8761/eureka/
+      
