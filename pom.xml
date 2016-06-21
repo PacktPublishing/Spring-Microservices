@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.brownfield</groupId>
+  <artifactId>pss-parent</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>chapter5.book</module>
+    <module>chapter5.book-apigateway</module>
+    <module>chapter5.search</module>
+    <module>chapter5.search-apigateway</module>
+    <module>chapter5.fares</module>
+    <module>chapter5.fares-apigateway</module>
+    <module>chapter5.checkin</module>
+    <module>chapter5.checkin-apigateway</module>
+    <module>chapter5.configserver</module>
+    <module>chapter5.eurekaserver</module>
+    <module>chapter5.website</module>
+  </modules>
+</project>

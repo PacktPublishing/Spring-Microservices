@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>www.flybrownfield.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>BrownField Airline </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/search-booking}">CheckIn</a></li>
+        </ul>
+    </nav> 
+  <div align="center" class="form-style-8">
+	<h2>Booking Search</h2>
+    <form action="#" th:action="@{/search-booking-get}" th:object="${uidata}" method="post">
+    	<table>
+    	  <tr> <td>Booking Reference</td><td> <input type="text" th:field="*{bookingid}" /> </td></tr>	     
+	      <tr> <td></td><td><input type="submit" value="Search" /> </td></tr>	
+	   </table>
+	    <div th:if="${uidata.selectedFlight != null}">
+	  <h3>
+	   	<table>
+		<tr>
+		  	 <td th:text="${uidata.selectedFlight.flightNumber}"/>
+		  	 <td th:text="${uidata.selectedFlight.origin}"/>
+		  	 <td th:text="${uidata.selectedFlight.destination}"/>
+		  	 <td th:text="${uidata.selectedFlight.flightDate}"/>
+		 
+		  	 <td th:text="${uidata.passenger.firstName}"/>
+		  	 <td th:text="${uidata.passenger.lastName}"/>
+
+	 		 <td>
+ 	 		 <a th:href="@{/checkin/{flightNumber}/{origin}/{destination}/{flightDate}/{fare}/{firstName}/{lastName}/{gender}/{bookingid}(
+ 	 		 					flightNumber=${uidata.selectedFlight.flightNumber},
+ 	 		 					origin=${uidata.selectedFlight.origin},
+ 	 		 					destination=${uidata.selectedFlight.destination},
+ 	 		 					flightDate=${uidata.selectedFlight.flightDate},
+ 	 		 					fare=${uidata.selectedFlight.fares.fare},
+ 	 		 					firstName=${uidata.passenger.firstName},
+ 	 		 					lastName=${uidata.passenger.lastName},
+ 	 		 					gender=${uidata.passenger.gender},
+ 	 		 					bookingid=${uidata.bookingid}
+ 	 		 					)}">CheckIn</a>
+ 	 		 </td>
+		</tr>
+	</table>
+	</h3>
+	   </div>
+   </form>
+      </div>
+</body>
+</html>
