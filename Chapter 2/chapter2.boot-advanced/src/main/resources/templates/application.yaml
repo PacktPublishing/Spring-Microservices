@@ -1,0 +1,10 @@
+spring:
+    profiles: development
+server:
+      port: 9090
+---
+spring:
+    profiles: production
+server:
+      port: 8080
+      
