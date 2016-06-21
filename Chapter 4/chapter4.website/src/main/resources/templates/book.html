@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>www.flybrownfield.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>BrownField Airline </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/search-booking}">CheckIn</a></li>
+        </ul>
+    </nav> 
+  <div align="center" class="form-style-8">
+	<h2>Selected Flight</h2>
+ <form action="#" th:action="@{/confirm}" th:object="${uidata}" method="post">
+ 	<h3>
+ 	<table>
+ 
+     <tbody>
+		<tr>
+	   	 <td>
+		   	 <span th:text="${uidata.selectedFlight.flightNumber}"></span>
+		   	 <input type="hidden" th:field="${uidata.selectedFlight.flightNumber}"/>
+	   	 </td>
+	  	 <td>
+	  	 	<span th:text="${uidata.selectedFlight.origin}"></span>
+	  		 <input type="hidden" th:field="${uidata.selectedFlight.origin}"/>
+	  	 </td>
+	  	 <td>
+	  	 	<span th:text="${uidata.selectedFlight.destination}"></span>
+	  	 	<input type="hidden" th:field="${uidata.selectedFlight.destination}"/>
+	  	 </td>
+	  	 <td>
+	  		 <span th:text="${uidata.selectedFlight.flightDate}"></span>
+	  	 	<input type="hidden" th:field="${uidata.selectedFlight.flightDate}"/>
+	  	 </td>
+	  	 <td>
+	  	 	<span th:text="${uidata.selectedFlight.fares.fare}"></span>
+	  	 	<input type="hidden" th:field="${uidata.selectedFlight.fares.fare}"/>
+	  	 </td>
+	 	</tr>
+	 	 </tbody>
+	</table>
+	</h3>
+   	<table>
+    	  <tr> <td>First Name </td><td> <input type="text" th:field="${uidata.passenger.firstName}" /> </td></tr>	     
+	      <tr> <td>Last Name </td><td><input type="text" th:field="${uidata.passenger.lastName}" /></td></tr>	
+	      <tr> <td>Gender</td> 
+	      	<td>
+	      		<select th:field="${uidata.passenger.gender}" >
+					  <option value="Male">Male</option>
+					  <option value="Female">Female</option>
+				</select>
+	      	</td>
+	      </tr>	
+	      <tr> <td><input type="submit" value="Confirm" /> </td></tr>	
+	   </table>
+    </form>
+  </div>
+</body>
+</html>
