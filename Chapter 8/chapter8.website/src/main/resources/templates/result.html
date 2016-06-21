@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>www.flybrownfield.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+<script>
+    function rowClicked(value) {
+    	alert(value);
+        //location.href = "/search?param=" + value;
+    	location.href = "/search;
+    }
+</script>    
+</head>
+<body>
+	<nav>
+       <ul>
+          <li>BrownField Airline </li>
+          <li><a th:href="@{/}">Search</a></li>
+           <li><a th:href="@{/search-booking}">CheckIn</a></li>
+        </ul>
+    </nav> 
+  <div align="center" class="form-style-8">
+	<h2>Available Flights</h2>
+		
+	
+	<table>
+	<thead>
+        <tr>
+            <th>#</th>
+            <th>Flight</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>Fare</th>
+        </tr>
+    </thead>
+	
+	 <tbody>
+		<tr th:each="flight : ${uidata.flights}" >
+		  	 <td th:text="${flight.id}"/>
+		  	 <td th:text="${flight.flightNumber}"/>
+		  	 <td th:text="${flight.origin}"/>
+		  	 <td th:text="${flight.destination}"/>
+		  	 <td th:text="${flight.flightDate}"/>
+		  	 <td th:text="${flight.fares.fare}"/>
+ 	 		 <td>
+ 	 		 <a th:href="@{/book/{flightNumber}/{origin}/{destination}/{flightDate}/{fare}(
+ 	 		 					flightNumber=${flight.flightNumber},
+ 	 		 					origin=${flight.origin},
+ 	 		 					destination=${flight.destination},
+ 	 		 					flightDate=${flight.flightDate},
+ 	 		 					fare=${flight.fares.fare},
+ 	 		 					)}">Book</a>
+ 	 		 </td>
+		</tr>
+		 </tbody>
+	</table>
+    
+    </div>
+</body>
+</html>
