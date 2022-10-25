@@ -9,3 +9,7 @@ There are no code files for chapters 1, 3, and 10. All hardware requirements are
 * [Mastering Microservices with Java](https://www.packtpub.com/application-development/mastering-microservices-java?utm_source=github&utm_medium=related&utm_campaign=9781785285172) - to be published in June 2016
 
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781786466686">https://packt.link/free-ebook/9781786466686 </a> </p>
